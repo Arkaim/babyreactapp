@@ -3,13 +3,17 @@ import logo from './logo.svg';
 import Header from './header'
 import './App.css';
 import Postlist from './postlist'
+import data from './testData'
 
 class App extends Component {
 	state = {
-		pageHeader: 'Naming posts'
+		pageHeader: 'Naming posts',
+		contests: []
 	};
 	componentDidMount() {
-		
+		this.setState({
+			contests: data.contests
+		}) 
 	}
 	componentWillMount() {
 		
@@ -20,8 +24,8 @@ class App extends Component {
 	    return (
 	    	<div className="App">
 	    		<Header message={this.state.pageHeader}/>
-	    		{this.props.contests.map(contest =>
-	    			<Postlist {...contest}/>
+	    		{this.state.contests.map(contest =>
+	    			<Postlist key={contest.id} {...contest}/>
 	    		)}
 
 	    	</div>

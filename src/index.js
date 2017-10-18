@@ -5,6 +5,6 @@ import App from './App';
 import data from './testData';
 console.log(data);
 
-ReactDOM.render(<App contests= {data.contests}/>, document.getElementById('root'))
+ReactDOM.render(<App contests= {[]}/>, document.getElementById('root'))
 
 
